@@ -33,7 +33,7 @@ function UpdateAccountMoney(account, money)
 end
 
 -- Withdraw Money
-RegisterServerEvent("qb-gangmenu:server:withdrawMoney")
+RegisterNetEvent("qb-gangmenu:server:withdrawMoney")
 AddEventHandler("qb-gangmenu:server:withdrawMoney", function(amount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -56,7 +56,7 @@ AddEventHandler("qb-gangmenu:server:withdrawMoney", function(amount)
 end)
 
 -- Deposit Money
-RegisterServerEvent("qb-gangmenu:server:depositMoney")
+RegisterNetEvent("qb-gangmenu:server:depositMoney")
 AddEventHandler("qb-gangmenu:server:depositMoney", function(amount)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -77,7 +77,7 @@ AddEventHandler("qb-gangmenu:server:depositMoney", function(amount)
         "Successfully deposited $" .. amount .. ' (' .. gang .. ')', src)
 end)
 
-RegisterServerEvent("qb-gangmenu:server:addAccountMoney")
+RegisterNetEvent("qb-gangmenu:server:addAccountMoney")
 AddEventHandler("qb-gangmenu:server:addAccountMoney", function(account, amount)
     if not Accounts[account] then
         Accounts[account] = 0
@@ -88,7 +88,7 @@ AddEventHandler("qb-gangmenu:server:addAccountMoney", function(account, amount)
     UpdateAccountMoney(account, Accounts[account])
 end)
 
-RegisterServerEvent("qb-gangmenu:server:removeAccountMoney")
+RegisterNetEvent("qb-gangmenu:server:removeAccountMoney")
 AddEventHandler("qb-gangmenu:server:removeAccountMoney", function(account, amount)
     if not Accounts[account] then
         Accounts[account] = 0
@@ -135,7 +135,7 @@ QBCore.Functions.CreateCallback('qb-gangmenu:server:GetEmployees', function(sour
 end)
 
 -- Grade Change
-RegisterServerEvent('qb-gangmenu:server:updateGrade')
+RegisterNetEvent('qb-gangmenu:server:updateGrade')
 AddEventHandler('qb-gangmenu:server:updateGrade', function(target, grade)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -165,7 +165,7 @@ AddEventHandler('qb-gangmenu:server:updateGrade', function(target, grade)
 end)
 
 -- Fire Employee
-RegisterServerEvent('qb-gangmenu:server:fireEmployee')
+RegisterNetEvent('qb-gangmenu:server:fireEmployee')
 AddEventHandler('qb-gangmenu:server:fireEmployee', function(target)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -203,7 +203,7 @@ AddEventHandler('qb-gangmenu:server:fireEmployee', function(target)
 end)
 
 -- Recruit Player
-RegisterServerEvent('qb-gangmenu:server:giveJob')
+RegisterNetEvent('qb-gangmenu:server:giveJob')
 AddEventHandler('qb-gangmenu:server:giveJob', function(recruit)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
